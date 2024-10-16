@@ -1,0 +1,172 @@
+@font-face {
+  font-family: RedHatText;
+  src: url(./assets/fonts/RedHatText-VariableFont_wght.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: RedHatText;
+}
+:root {
+  --Red: #c73a0f;
+  --Green: hsl(159, 69%, 38%);
+  --Rose50: hsl(20, 50%, 98%);
+  --Rose100: hsl(13, 31%, 94%);
+  --Rose300: hsl(14, 25%, 72%);
+  --Rose400: hsl(7, 20%, 60%);
+  --Rose500: hsl(12, 20%, 44%);
+  --Rose900: hsl(14, 65%, 9%);
+}
+body {
+  background-color: var(--Rose50);
+}
+.container {
+  margin: auto;
+  padding: 0 30px;
+  padding-top: 50px;
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1400px;
+  }
+}
+.inner-container {
+  display: flex;
+  justify-content: space-between;
+}
+/* .cart {
+  background-color: rgb(6, 6, 6);
+  width: 400px;
+  height: 400px;
+} */
+.products-container h1 {
+  margin-bottom: 15px;
+}
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+}
+.card img {
+  width: 100%;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  margin-bottom: 25px;
+}
+.card p {
+  color: #838383;
+  margin-bottom: 5px;
+}
+.card h5 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 19px;
+}
+.card .price {
+  color: var(--Red);
+  font-weight: 600;
+}
+.btnContainer {
+  position: absolute;
+  top: 71%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background-color: #fff;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid #686868;
+  padding: 15px 20px;
+  width: 180px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  -o-border-radius: 50px;
+  cursor: pointer;
+}
+.card button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  margin: auto;
+}
+.card button img {
+  margin: 0;
+}
+.card button .cartimg {
+  width: 22px;
+}
+.card button .plusminus {
+  border: 1px solid #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.card .plusminusbtn {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.card .plusminusbtn:hover {
+  background-color: #fff;
+}
+.card button .plusminus:hover {
+  filter: invert(28%) sepia(90%) saturate(6105%) hue-rotate(18deg)
+    brightness(94%) contrast(88%);
+  -webkit-filter: invert(28%) sepia(90%) saturate(6105%) hue-rotate(18deg)
+    brightness(94%) contrast(88%);
+}
+.btnContainer:hover {
+  border: 1px solid var(--Red);
+  color: var(--Red);
+}
+.btnContainer:hover button {
+  color: var(--Red);
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  width: 80%;
+}

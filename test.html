@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+        #count {
+            font-size: 24px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="mainButton">Click me</button>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const mainButton = document.getElementById('mainButton');
+        let isCounter = false;
+        let count = 0;
+
+        mainButton.addEventListener('click', function() {
+            if (!isCounter) {
+                isCounter = true;
+                updateDisplay();
+            }
+        });
+
+        function updateDisplay() {
+            container.innerHTML = `
+                <button onclick="decrement()">-</button>
+                <span id="count">${count}</span>
+                <button onclick="increment()">+</button>
+            `;
+        }
+
+        function increment() {
+            count++;
+            document.getElementById('count').textContent = count;
+        }
+
+        function decrement() {
+            count--;
+            document.getElementById('count').textContent = count;
+        }
+    </script>
+</body>
+</html>
