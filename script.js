@@ -29,7 +29,7 @@ function update(btnContainerElement, index) {
 
   if (!isCounter) {
     btnContainerElement.setAttribute("data-counter", "true");
-    updateDisplay(btnContainerElement, index); // تمرير index للكارد
+    updateDisplay(btnContainerElement, index);
   }
 }
 
@@ -49,8 +49,6 @@ function increment(index) {
   let currentCount = parseInt(countElement.textContent);
   currentCount++;
   countElement.textContent = currentCount;
-
-  // تحديث قيمة العداد في الـ data attribute
   let btnContainerElement = countElement.parentElement;
   btnContainerElement.setAttribute("data-count", currentCount);
 }
@@ -61,8 +59,6 @@ function decrement(index) {
   if (currentCount > 0) {
     currentCount--;
     countElement.textContent = currentCount;
-
-    // تحديث قيمة العداد في الـ data attribute
     let btnContainerElement = countElement.parentElement;
     btnContainerElement.setAttribute("data-count", currentCount);
   }
