@@ -61,5 +61,33 @@ function decrement(index) {
     countElement.textContent = currentCount;
     let btnContainerElement = countElement.parentElement;
     btnContainerElement.setAttribute("data-count", currentCount);
+    
+    // Check if count is zero and revert to original state if true
+    if (currentCount === 0) {
+      revertToOriginalState(btnContainerElement, index);
+    }
+    
+    // Update cart or perform any other necessary actions
+    updateCart(index, currentCount);
   }
+}
+
+function revertToOriginalState(btnContainerElement, index) {
+  btnContainerElement.setAttribute("data-counter", "false");
+  btnContainerElement.innerHTML = `
+    <button class="addBtn" type="button">
+      <img
+        class="cartimg"
+        src="./assets/images/icon-add-to-cart.svg"
+        alt="..."
+      />Add to Cart
+    </button>
+  `;
+  btnContainerElement.style.backgroundColor = ""; // Reset to default
+  btnContainerElement.style.color = ""; // Reset to default
+}
+
+function updateCart(index, count) {
+  // Implement cart update logic here
+  console.log(`Updated cart: Item ${index}, Count: ${count}`);
 }
